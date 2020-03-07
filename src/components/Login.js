@@ -1,6 +1,21 @@
 import React, { Component } from "react";
+import Signup from './Signup'
+
 
 export default class Login extends Component {
+    state={
+        users:[]
+    }
+    addUser = (user)=>{
+        
+            user.id = Math.random()
+            let newUser = [...this.state.users, user]
+            this.setState({
+                users: newUser
+            })
+            console.log(newUser)
+        
+    }
     render() {
         return (
             <form>
@@ -27,7 +42,10 @@ export default class Login extends Component {
                 <p className="forgot-password text-right">
                     Forgot <a href="#">password?</a>
                 </p>
+               
             </form>
+            
         );
+       
     }
 }
